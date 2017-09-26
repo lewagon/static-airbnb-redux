@@ -1,4 +1,16 @@
-body {
-  color: white;
-  background-color: black;
+@import "card";
+
+.flat-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.flat {
+  flex: 50% 0 0;
+  cursor: pointer;
+  border: 6px solid transparent;
+}
+
+.selected {
+  border: 6px dashed red;
 }
