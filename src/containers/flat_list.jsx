@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
-import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux';
-import Flat from '../containers/flat';
+import React, { Component } from "react";
+import { bindActionCreators } from "redux";
+import { connect } from "react-redux";
+import Flat from "../containers/flat";
 
-import { setFlats } from '../actions';
+import { setFlats } from "../actions";
 
 class FlatList extends Component {
   // static defaultProps = {
@@ -27,8 +27,8 @@ class FlatList extends Component {
   render() {
     return (
       <div className="flat-list col-sm-7">
-        {this.props.flats.map((flat) => {
-          return <Flat key={flat.name} flat={flat} />;
+        {this.props.flats.map((flat, index) => {
+          return <Flat key={flat.name} flat={flat} tabIndex={index} />;
         })}
       </div>
     );
@@ -42,10 +42,7 @@ function mapStateToProps(state) {
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators(
-    { setFlats },
-    dispatch
-  );
+  return bindActionCreators({ setFlats }, dispatch);
 }
 
 // export default FlatList;
